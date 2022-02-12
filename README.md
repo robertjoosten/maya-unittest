@@ -1,6 +1,6 @@
 # maya-unittest
 Unittest subset for specific use in Maya. The main has been adjusted to 
-initialize a standalone session of Maya. 
+initialize a standalone session of Maya.
 
 ## Install
 The package can be installed by running the install command on the setup.py
