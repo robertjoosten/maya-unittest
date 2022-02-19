@@ -1,5 +1,5 @@
 def main():
-    import sys
+    import os
     import unittest
     import maya.standalone
 
@@ -7,7 +7,8 @@ def main():
     program = unittest.main(module=None, exit=False)
     maya.standalone.uninitialize()
 
-    sys.exit(not program.result.wasSuccessful())
+    ret_code = not program.result.wasSuccessful()
+    os._exit(ret_code)  # sys.exit default to 0 at times.
 
 
 if __name__ == "__main__":
