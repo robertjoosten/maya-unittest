@@ -4,7 +4,7 @@ def main():
     import unittest
     import maya.standalone
 
-    os.environ["MAYA_NO_STANDALONE_ATEXIT"] = 1
+    os.environ["MAYA_NO_STANDALONE_ATEXIT"] = "1"
     maya.standalone.initialize()
     program = unittest.main(module=None, exit=False)
     maya.standalone.uninitialize()
