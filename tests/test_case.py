@@ -12,7 +12,6 @@ class TestMayaTestCase(MayaTestCase):
 
         loaded = cmds.pluginInfo(self.plugin, query=True, loaded=True)
         self.assertTrue(loaded)
-        self.assertTrue(False)
 
     def test_unload_plugins(self):
         if cmds.pluginInfo(self.plugin, query=True, loaded=True):
