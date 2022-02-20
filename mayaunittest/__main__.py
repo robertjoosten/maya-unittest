@@ -1,13 +1,16 @@
 def main():
-    import os
     import sys
+    import atexit
     import unittest
+    import maya.utils
     import maya.standalone
 
-    os.environ["MAYA_NO_STANDALONE_ATEXIT"] = "1"
     maya.standalone.initialize()
     program = unittest.main(module=None, exit=False)
+
+    maya.utils.processIdleEvents()
     maya.standalone.uninitialize()
+    atexit._run_exitfuncs()
 
     ret_code = not program.result.wasSuccessful()
     sys.exit(ret_code)
